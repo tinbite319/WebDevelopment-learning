@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+    <title>Narrow Down Your Menu Choice</title>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Narrow Down Your Chinese Menu Choice
+            </div>
+            <div class="card-body">
+              <div class="row" ng-controller="NarrowItDownController as syntax">
+
+                <div class="col">
+                  <div class="form-group">
+                    <input type="text" placeholder="search term" ng-model="searchItem" class="form-control">
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="form-group narrow-button">
+                    <button class="btn btn-primary" ng-click="syntax.searchMethod(searchItem);">Narrow It Down For Me!</button>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="loader" ng-if="syntax.loader"></div>
+                  <found-items 
+                      found="syntax"
+                      on-remove="syntax.removeItem(index)">
+                  </found-items>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

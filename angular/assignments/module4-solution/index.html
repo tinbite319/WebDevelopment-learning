@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Module 4 Coding Assignment</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light mb-4 shadow-sm">
+      <a class="navbar-brand">Welcome to our Restaurant</a>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Our Menu</h5>
+            </div>
+            <div class="card-body">
+              <ui-view></ui-view>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="./app/modules/menuapp.module.js"></script>
+    <script src="./app/modules/data.module.js"></script>
+    <!-- Routes -->
+    <script src="./app/router/routes.js"></script>
+
+    <!-- Services -->
+    <script src="./app/components/categories.component.js"></script>
+    <script src="./app/components/items.component.js"></script>
+    <script src="./app/components/category-list.controller.js"></script>
+    <script src="./app/components/items.controller.js"></script>
+    <script src="./app/services/menudata.service.js"></script>
+
+  </body>
+</html>

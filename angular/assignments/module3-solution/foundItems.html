@@ -1,0 +1,24 @@
+<!-- <div class="container" ng-if="!list.found.found">
+    <div class="loader"></div>
+</div> -->
+
+<table class="table table-hover" ng-if="list.found.found">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Don't want this one!</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in list.found.found">
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>
+                <button ng-click="list.onRemove({index: $index})" class="btn btn-danger">
+                    <span class="text-white">X</span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
